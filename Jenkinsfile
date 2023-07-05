@@ -1,6 +1,6 @@
 def remote = [:]
     remote.name = 'server'
-    remote.host = '3.110.175.3'
+    remote.host = '15.206.88.96'
     remote.allowAnyHosts = true
 
 pipeline {
@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Remote SSH') {
             steps{
-                    remote.user = 'shoyeb'
+                    remote.user = 'user'
                     remote.password = 'pass'
                     sshPut remote: remote, from: "index.html", into: "~"
                     sshCommand remote: remote, command: "ls -l"
