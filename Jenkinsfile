@@ -1,7 +1,8 @@
 def remote = [:]
-    remote.name = 'server'
-    remote.host = '15.206.88.96'
-    remote.allowAnyHosts = true
+remote.name = 'server'
+remote.host = '15.206.88.96'
+remote.port = 22
+remote.allowAnyHosts = true
 
 pipeline {
     agent any
