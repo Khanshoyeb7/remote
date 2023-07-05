@@ -9,10 +9,12 @@ pipeline {
     stages {
         stage('Remote SSH') {
             steps{
+                script {
                     remote.user = 'user'
                     remote.password = 'pass'
                     sshPut remote: remote, from: "index.html", into: "~"
                     sshCommand remote: remote, command: "ls -l"
+                }
                 }
             }
         }
